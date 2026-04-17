@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /download
+
+Sitemap: https://haltsec.net/sitemap.xml

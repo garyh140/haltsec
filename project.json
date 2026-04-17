@@ -1,0 +1,23 @@
+{
+  "overview": "A single-page marketing website for HaltSec Security Services LLC — a professional cybersecurity firm based in Ohio serving clients nationwide. The site features a hero section with the company logo, a services overview, an about section highlighting the team's expertise, and direct contact information. Fully optimized for SEO with structured data, Open Graph tags, and semantic HTML.",
+  "features": [
+    "Single-page scrollable layout with smooth anchor navigation",
+    "Hero section with HaltSec logo and cybersecurity-themed graphics",
+    "Three core service sections: Vulnerability Assessment, Strategic Security Consulting, Security Awareness Training",
+    "SEO optimization with meta tags, structured data, and Open Graph tags",
+    "Direct contact information (no forms)",
+    "Fully responsive for mobile and desktop",
+    "Dark professional cybersecurity theme"
+  ],
+  "category": "business-marketing",
+  "tags": [
+    "cybersecurity",
+    "security-consulting",
+    "business-website",
+    "seo",
+    "single-page",
+    "marketing",
+    "professional-services"
+  ],
+  "last_updated": "2026-04-17T16:51:06.258Z"
+}

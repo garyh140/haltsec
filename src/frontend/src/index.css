@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Cybersecurity-themed color palette using OKLCH */
+    /* Primary: Deep teal/cyan for trust and technology */
+    --background: 1 0 0;
+    --foreground: 0.145 0 0;
+    --card: 1 0 0;
+    --card-foreground: 0.145 0 0;
+    --popover: 1 0 0;
+    --popover-foreground: 0.145 0 0;
+    --primary: 0.45 0.15 200;
+    --primary-foreground: 0.99 0 0;
+    --secondary: 0.96 0.01 200;
+    --secondary-foreground: 0.145 0 0;
+    --muted: 0.96 0.01 200;
+    --muted-foreground: 0.5 0.02 200;
+    --accent: 0.55 0.18 180;
+    --accent-foreground: 0.99 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.9 0.01 200;
+    --input: 0.9 0.01 200;
+    --ring: 0.45 0.15 200;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.45 0.15 200;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.96 0.01 200;
+    --sidebar-accent-foreground: 0.145 0 0;
+    --sidebar-border: 0.9 0.01 200;
+    --sidebar-ring: 0.708 0 0;
+  }
+
+  .dark {
+    /* Dark mode: Darker backgrounds with cyan/teal accents */
+    --background: 0.145 0.02 220;
+    --foreground: 0.97 0.01 200;
+    --card: 0.18 0.02 220;
+    --card-foreground: 0.97 0.01 200;
+    --popover: 0.2 0.02 220;
+    --popover-foreground: 0.97 0.01 200;
+    --primary: 0.65 0.18 195;
+    --primary-foreground: 0.145 0.02 220;
+    --secondary: 0.25 0.03 220;
+    --secondary-foreground: 0.97 0.01 200;
+    --muted: 0.25 0.03 220;
+    --muted-foreground: 0.65 0.05 200;
+    --accent: 0.55 0.18 180;
+    --accent-foreground: 0.97 0.01 200;
+    --destructive: 0.6 0.22 25;
+    --destructive-foreground: 0.97 0.01 200;
+    --border: 0.3 0.03 220;
+    --input: 0.3 0.03 220;
+    --ring: 0.65 0.18 195;
+    --chart-1: 0.488 0.243 264.376;
+    --chart-2: 0.696 0.17 162.48;
+    --chart-3: 0.769 0.188 70.08;
+    --chart-4: 0.627 0.265 303.9;
+    --chart-5: 0.645 0.246 16.439;
+    --sidebar: 0.18 0.02 220;
+    --sidebar-foreground: 0.97 0.01 200;
+    --sidebar-primary: 0.65 0.18 195;
+    --sidebar-primary-foreground: 0.145 0.02 220;
+    --sidebar-accent: 0.25 0.03 220;
+    --sidebar-accent-foreground: 0.97 0.01 200;
+    --sidebar-border: 0.3 0.03 220;
+    --sidebar-ring: 0.439 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    --font-display: "General Sans";
+    --font-body: "Inter";
+    --font-mono: "Geist Mono";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+    letter-spacing: -0.02em;
+  }
+
+  /* Responsive safety: prevent horizontal overflow */
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Ensure images and media scale responsively */
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Focus-visible defaults for accessibility */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid oklch(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Ensure comfortable tap targets on mobile */
+  @media (pointer: coarse) {
+    button,
+    a,
+    input,
+    textarea,
+    select {
+      min-height: 44px;
+    }
+  }
+
+  /* Safari-specific fixes for form elements */
+  input,
+  textarea,
+  select {
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+
+  /* Prevent text overflow */
+  p,
+  li,
+  span,
+  div {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-display: swap;
+}
+
+@layer utilities {
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .text-display {
+    @apply font-bold text-3xl md:text-4xl lg:text-5xl tracking-tight;
+    font-family: var(--font-display);
+  }
+
+  .text-heading {
+    @apply font-bold text-2xl md:text-3xl tracking-tight;
+    font-family: var(--font-display);
+  }
+
+  .text-body {
+    @apply text-base leading-relaxed;
+    font-family: var(--font-body);
+  }
+
+  .geometric-pattern {
+    background-image: linear-gradient(
+        90deg,
+        oklch(var(--primary) / 0.05) 1px,
+        transparent 1px
+      ), linear-gradient(oklch(var(--primary) / 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .accent-glow-hover {
+    @apply transition-smooth hover:shadow-lg hover:border-primary;
+  }
+
+  .zone-elevated {
+    @apply bg-card border border-border rounded-lg;
+  }
+}
